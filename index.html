@@ -39,6 +39,25 @@ body, html {height: 100%}
 </noscript>
 <script defer src="https://s.smiliop.com/ingress/d93e1756-24e9-4877-9686-a6bb040d5ad9/script.js"></script>
 
+<script>	
+// ES3
+var getParams = function() {
+  var results = [], parts = window.location.search.slice(1).split("&"), i, len;
+  for (i = 0, len = parts.length; i < len; ++i) results.push(parts[i].split("="));
+  return results;
+};
+console.log(getParams());
+
+// ES6
+const getParams = () => window.location.search.slice(1).split("&").map(q => q.split("="));
+console.log(getParams());
+
+// ES7 stage 0
+let params = do { window.location.search.slice(1).split("&").map(q => q.split("=")) };
+console.log(params);
+</script>
+	
+	
 <script>
 function getURLParameter(name) {
 	return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);
