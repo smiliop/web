@@ -32,49 +32,9 @@ body, html {height: 100%}
     <h1 class="w3-jumbo w3-animate-top w3-text-red">#smiliop</h1>    
   </div>
 </div>
-
 </body>
 <noscript>
 <img src="https://s.smiliop.com/ingress/d93e1756-24e9-4877-9686-a6bb040d5ad9/pixel.gif">
 </noscript>
 <script defer src="https://s.smiliop.com/ingress/d93e1756-24e9-4877-9686-a6bb040d5ad9/script.js"></script>
-
-<script>	
-// ES3
-var getParams = function() {
-  var results = [], parts = window.location.search.slice(1).split("&"), i, len;
-  for (i = 0, len = parts.length; i < len; ++i) results.push(parts[i].split("="));
-  return results;
-};
-console.log(getParams());
-
-// ES6
-const getParams = () => window.location.search.slice(1).split("&").map(q => q.split("="));
-console.log(getParams());
-
-// ES7 stage 0
-let params = do { window.location.search.slice(1).split("&").map(q => q.split("=")) };
-console.log(params);
-</script>
-	
-	
-<script>
-function getURLParameter(name) {
-	return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);
-}
-function hideURLParams() {
-	//Parameters to hide (ie ?success=value, ?error=value, etc)
-	var hide = ['success','error'];
-	for(var h in hide) {
-		if(getURLParameter(h)) {
-			history.replaceState(null, document.getElementsByTagName("title")[0].innerHTML, window.location.pathname);
-		}
-	}
-}
-
-//Run onload, you can do this yourself if you want to do it a different way
-window.onload = hideURLParams;
-</script>
-
-
 </html>
